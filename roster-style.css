@@ -1,0 +1,402 @@
+/* roster-style.css - Упрощенная версия без статистик */
+
+/* Основной лейаут */
+.roster-page-wrapper {
+    display: flex;
+    min-height: 100vh;
+    margin-left: 0;
+    transition: margin-left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.sidebar:hover ~ main .roster-page-wrapper {
+    margin-left: 180px;
+}
+
+/* Левая колонка */
+.players-list-column {
+    width: 350px;
+    background: #000;
+    display: flex;
+    flex-direction: column;
+    padding: 40px 0;
+    overflow-y: auto;
+    flex-shrink: 0;
+    border-right: 1px solid rgba(118, 255, 3, 0.1);
+}
+
+.back-link {
+    padding: 0 40px 30px;
+    font-size: 0.8rem;
+    color: #808a80;
+    text-transform: uppercase;
+    font-weight: 700;
+    transition: color 0.3s ease;
+    display: block;
+}
+
+.back-link:hover {
+    color: #76ff03;
+}
+
+.player-nav-item {
+    padding: 20px 40px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-left: 4px solid transparent;
+}
+
+.player-nav-item:hover {
+    background: rgba(118, 255, 3, 0.05);
+}
+
+.player-nav-item.active {
+    background: rgba(118, 255, 3, 0.1);
+    border-left-color: #76ff03;
+}
+
+.p-nav-nick {
+    font-size: 1.8rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    line-height: 1;
+    margin-bottom: 5px;
+    color: #fff;
+}
+
+.player-nav-item.active .p-nav-nick {
+    color: #76ff03;
+    text-shadow: 0 0 15px rgba(118, 255, 3, 0.3);
+}
+
+.p-nav-name {
+    font-size: 0.7rem;
+    color: #808a80;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Правая колонка */
+.player-details-column {
+    flex: 1;
+    background: #111;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding-left: 10%;
+    background: radial-gradient(circle at 70% 50%, rgba(15, 43, 15, 0.9) 0%, #050705 100%);
+    overflow: hidden;
+}
+
+.player-info-content {
+    max-width: 500px;
+    z-index: 20;
+    animation: fadeIn 0.5s ease-out;
+    position: relative;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateX(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.p-detail-role {
+    color: #76ff03;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+    text-shadow: 0 0 10px rgba(118, 255, 3, 0.3);
+}
+
+.p-detail-nick {
+    font-size: 5rem;
+    font-weight: 900;
+    line-height: 0.9;
+    margin-bottom: 30px;
+    position: relative;
+    display: inline-block;
+    color: #fff;
+    text-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+.p-detail-bio {
+    color: #b0b8b0;
+    font-size: 1.4rem;
+    margin-bottom: 40px;
+    line-height: 1.6;
+    max-width: 600px;
+}
+
+/* Фото игрока */
+.player-photo-bg {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    height: 95%;
+    max-width: 65%;
+    object-fit: contain;
+    object-position: right bottom;
+    opacity: 0.85;
+    z-index: 1;
+    transition: all 0.5s ease;
+    filter: drop-shadow(-15px 0 30px rgba(0, 0, 0, 0.8));
+    
+    mask-image: linear-gradient(
+        to left,
+        rgba(0, 0, 0, 1) 0%,
+        rgba(0, 0, 0, 0.95) 25%,
+        rgba(0, 0, 0, 0.7) 45%,
+        rgba(0, 0, 0, 0.3) 70%,
+        rgba(0, 0, 0, 0) 100%
+    );
+    -webkit-mask-image: linear-gradient(
+        to left,
+        rgba(0, 0, 0, 1) 0%,
+        rgba(0, 0, 0, 0.95) 25%,
+        rgba(0, 0, 0, 0.7) 45%,
+        rgba(0, 0, 0, 0.3) 70%,
+        rgba(0, 0, 0, 0) 100%
+    );
+}
+
+/* Иконки конфигов и Faceit */
+.config-download {
+    position: absolute;
+    top: 10px;
+    right: -60px;
+    background: transparent;
+    border: none;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 30;
+    text-decoration: none;
+}
+
+.config-download:hover {
+    background: rgba(118, 255, 3, 0.1);
+    transform: scale(1.1) rotate(5deg);
+    box-shadow: 0 0 20px rgba(118, 255, 3, 0.35);
+}
+
+.config-icon {
+    width: 24px;
+    height: 24px;
+    color: #76ff03;
+    transition: all 0.3s ease;
+    font-size: 1.5rem;
+}
+
+.config-download:hover .config-icon {
+    transform: translateY(-2px);
+    color: #ffffff;
+}
+
+.config-tooltip {
+    position: absolute;
+    top: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.95);
+    color: #76ff03;
+    padding: 8px 12px;
+    border-radius: 4px;
+    font-size: 0.7rem;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    border: 1px solid #76ff03;
+    z-index: 40;
+    pointer-events: none;
+}
+
+.config-download:hover .config-tooltip {
+    opacity: 1;
+    visibility: visible;
+    top: -45px;
+}
+
+.faceit-link {
+    position: absolute;
+    top: 10px;
+    right: -120px;
+    background: transparent;
+    border: none;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 30;
+    text-decoration: none;
+}
+
+.faceit-link:hover {
+    background: rgba(255, 105, 0, 0.1);
+    transform: scale(1.1);
+    box-shadow: 0 0 20px rgba(255, 105, 0, 0.35);
+}
+
+.faceit-text-icon {
+    font-family: 'Arial', sans-serif;
+    font-weight: 900;
+    font-size: 1.4rem;
+    color: #FF6900;
+    transition: all 0.3s ease;
+}
+
+.faceit-link:hover .faceit-text-icon {
+    color: #ffffff;
+    transform: translateY(-2px);
+}
+
+.faceit-tooltip {
+    position: absolute;
+    top: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.95);
+    color: #FF6900;
+    padding: 8px 12px;
+    border-radius: 4px;
+    font-size: 0.7rem;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    border: 1px solid #FF6900;
+    z-index: 40;
+    pointer-events: none;
+}
+
+.faceit-link:hover .faceit-tooltip {
+    opacity: 1;
+    visibility: visible;
+    top: -45px;
+}
+
+.p-detail-nick {
+    position: relative;
+    display: inline-block;
+}
+
+/* Мобильная версия */
+@media (max-width: 1000px) {
+    .roster-page-wrapper {
+        flex-direction: column;
+        margin-left: 0 !important;
+    }
+    
+    .players-list-column {
+        width: 100% !important;
+        height: auto;
+        max-height: 250px;
+        padding: 15px 0 !important;
+        border-right: none;
+        border-bottom: 1px solid rgba(118, 255, 3, 0.1);
+        overflow-y: auto;
+    }
+    
+    .player-nav-item {
+        padding: 15px 20px;
+        border-left: none;
+        text-align: center;
+    }
+    
+    .player-nav-item.active {
+        border-left: none;
+        border-bottom: 2px solid #76ff03;
+    }
+    
+    .player-details-column {
+        padding: 30px 20px !important;
+        min-height: calc(100vh - 250px);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        text-align: center;
+        padding-left: 20px !important;
+        background: radial-gradient(circle at 50% 20%, rgba(15, 43, 15, 0.9) 0%, #050705 100%);
+    }
+    
+    .player-info-content {
+        max-width: 100% !important;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    
+    /* Мобильная версия фото */
+    .player-photo-bg {
+        position: relative !important;
+        width: 200px !important;
+        height: 200px !important;
+        max-width: 100% !important;
+        border-radius: 20px;
+        border: 3px solid rgba(118, 255, 3, 0.4);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        object-fit: cover;
+        object-position: top center;
+        margin: 0 auto 20px;
+        background: #0d110d;
+        mask-image: none !important;
+        -webkit-mask-image: none !important;
+        opacity: 1;
+        height: auto;
+        margin-bottom: 30px;
+    }
+    
+    .p-detail-nick {
+        font-size: 3rem !important;
+        margin-bottom: 15px;
+    }
+    
+    .p-detail-bio {
+        font-size: 1.1rem !important;
+        margin-bottom: 25px;
+        padding: 0 10px;
+    }
+    
+    /* Иконки на мобильных - под ником */
+    .config-download,
+    .faceit-link {
+        position: relative !important;
+        top: 0 !important;
+        right: 0 !important;
+        display: inline-block !important;
+        margin: 10px 8px !important;
+        width: 45px;
+        height: 45px;
+    }
+    
+    .config-tooltip,
+    .faceit-tooltip {
+        display: none !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .player-photo-bg {
+        width: 160px !important;
+        height: 160px !important;
+    }
+    
+    .p-detail-nick {
+        font-size: 2.2rem !important;
+    }
+    
+    .p-detail-bio {
+        font-size: 1rem !important;
+    }
+}

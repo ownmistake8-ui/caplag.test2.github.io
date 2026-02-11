@@ -1,0 +1,896 @@
+/* ==============================
+   MERCH STYLE - ИСПРАВЛЕННЫЙ ВАРИАНТ
+   ============================== */
+
+/* 1. ОСНОВНОЙ КОНТЕЙНЕР */
+.merch-container {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* 2. ГЕРОЙ СЕКЦИЯ - ФИКС ЦЕНТРИРОВАНИЯ */
+.merch-hero {
+    padding: 100px 0 60px !important;
+    text-align: center !important;
+    background: transparent !important;
+    margin-bottom: 40px !important;
+    position: relative !important;
+    width: 100% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+.merch-hero .merch-container {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+.merch-hero h1 {
+    font-size: clamp(2.5rem, 5vw, 4rem) !important;
+    font-weight: 900 !important;
+    text-transform: uppercase !important;
+    margin-bottom: 20px !important;
+    color: #ffffff !important;  /* Простой белый цвет */
+    text-align: center !important;
+    width: 100% !important;
+}
+
+.merch-hero p {
+    color: var(--text-muted) !important;
+    font-size: clamp(1rem, 2vw, 1.2rem) !important;
+    max-width: 600px !important;
+    margin: 0 auto !important;
+    line-height: 1.6 !important;
+    text-align: center !important;
+    width: 100% !important;
+}
+
+/* 3. ФИЛЬТРЫ - ВСЕГДА ВИДИМЫ */
+.merch-filters {
+    padding: 30px 0 !important;
+    background: transparent !important;
+    margin-bottom: 50px !important;
+    width: 100% !important;
+}
+
+.filter-buttons {
+    display: flex !important;
+    justify-content: center !important;
+    flex-wrap: wrap !important;
+    gap: 15px !important;
+    width: 100% !important;
+}
+
+.filter-btn {
+    padding: 12px 25px !important;
+    background: transparent !important;
+    border: 2px solid var(--accent-primary) !important;
+    color: var(--text-main) !important;
+    font-weight: 700 !important;
+    text-transform: uppercase !important;
+    font-size: 0.9rem !important;
+    cursor: pointer !important;
+    transition: all 0.3s ease !important;
+    border-radius: 4px !important;
+    white-space: nowrap !important;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+    background: var(--accent-primary) !important;
+    color: #000 !important;
+    box-shadow: 0 0 20px var(--accent-glow) !important;
+}
+
+/* 4. ПРОДУКТЫ - ИСПРАВЛЕННАЯ СЕТКА */
+.merch-products {
+    padding: 50px 0 !important;
+    min-height: 500px !important;
+    background: transparent !important;
+    width: 100% !important;
+}
+
+.products-grid {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)) !important;
+    gap: 30px !important;
+    margin-top: 30px !important;
+    width: 100% !important;
+}
+
+.product-card {
+    background: var(--bg-surface) !important;
+    border-radius: 12px !important;
+    overflow: hidden !important;
+    transition: all 0.3s ease !important;
+    border: 1px solid rgba(118, 255, 3, 0.1) !important;
+    display: flex !important;
+    flex-direction: column !important;
+    height: 100% !important;
+    min-height: 450px !important;
+}
+
+.product-card:hover {
+    transform: translateY(-10px) !important;
+    box-shadow: 0 10px 30px rgba(118, 255, 3, 0.15) !important;
+    border-color: rgba(118, 255, 3, 0.3) !important;
+}
+
+.product-image {
+    height: 250px !important;
+    background: var(--bg-body) !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    position: relative !important;
+    overflow: hidden !important;
+    border: none !important;
+    padding: 20px !important;
+    width: 100% !important;
+}
+
+.product-image img {
+    max-width: 90% !important;
+    max-height: 90% !important;
+    transition: transform 0.5s ease !important;
+    object-fit: contain !important;
+}
+
+.product-category {
+    position: absolute !important;
+    top: 15px !important;
+    left: 15px !important;
+    background: var(--accent-primary) !important;
+    color: #000 !important;
+    padding: 6px 12px !important;
+    font-size: 0.7rem !important;
+    font-weight: 700 !important;
+    text-transform: uppercase !important;
+    border-radius: 4px !important;
+    z-index: 3 !important;
+}
+
+.product-info {
+    padding: 20px !important;
+    flex-grow: 1 !important;
+    display: flex !important;
+    flex-direction: column !important;
+}
+
+.product-title {
+    font-size: 1.3rem !important;
+    font-weight: 700 !important;
+    margin-bottom: 10px !important;
+    color: var(--text-main) !important;
+    line-height: 1.3 !important;
+}
+
+.product-description {
+    color: var(--text-muted) !important;
+    font-size: 0.9rem !important;
+    margin-bottom: 15px !important;
+    line-height: 1.4 !important;
+    flex-grow: 1 !important;
+}
+
+.product-price {
+    font-size: 1.5rem !important;
+    font-weight: 900 !important;
+    color: var(--accent-primary) !important;
+    margin-bottom: 15px !important;
+}
+
+.product-actions {
+    display: flex !important;
+    gap: 10px !important;
+    margin-top: auto !important;
+}
+
+.btn-view,
+.btn-add-to-cart {
+    flex: 1 !important;
+    padding: 12px !important;
+    border: none !important;
+    font-weight: 700 !important;
+    text-transform: uppercase !important;
+    cursor: pointer !important;
+    transition: all 0.3s ease !important;
+    font-size: 0.8rem !important;
+    border-radius: 4px !important;
+}
+
+.btn-view {
+    background: transparent !important;
+    border: 2px solid var(--accent-primary) !important;
+    color: var(--accent-primary) !important;
+}
+
+.btn-view:hover {
+    background: rgba(118, 255, 3, 0.1) !important;
+}
+
+.btn-add-to-cart {
+    background: var(--accent-primary) !important;
+    color: #000 !important;
+}
+
+.btn-add-to-cart:hover {
+    background: var(--accent-secondary) !important;
+    box-shadow: 0 0 15px var(--accent-glow) !important;
+}
+
+/* 5. КОРЗИНА - ИСПРАВЛЕННАЯ */
+.cart-section {
+    padding: 80px 0 !important;
+    background: transparent !important;
+    margin-top: 50px !important;
+    width: 100% !important;
+}
+
+.cart-section .section-title {
+    font-size: 2rem !important;
+    font-weight: 800 !important;
+    text-transform: uppercase !important;
+    margin-bottom: 30px !important;
+    color: var(--text-main) !important;
+}
+
+.cart-wrapper {
+    display: grid !important;
+    grid-template-columns: 2fr 1fr !important;
+    gap: 40px !important;
+    margin-top: 30px !important;
+    width: 100% !important;
+}
+
+.cart-items {
+    background: var(--bg-surface) !important;
+    padding: 20px !important;
+    border-radius: 12px !important;
+    min-height: 200px !important;
+    border: 1px solid rgba(118, 255, 3, 0.1) !important;
+}
+
+.cart-empty {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 50px 20px !important;
+    color: var(--text-muted) !important;
+    text-align: center !important;
+    height: 100% !important;
+}
+
+.cart-empty i {
+    font-size: 3rem !important;
+    margin-bottom: 20px !important;
+    opacity: 0.3 !important;
+}
+
+.cart-item {
+    display: flex !important;
+    align-items: center !important;
+    padding: 15px !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
+    width: 100% !important;
+}
+
+.cart-item:last-child {
+    border-bottom: none !important;
+}
+
+.cart-item-image {
+    width: 80px !important;
+    height: 80px !important;
+    background: var(--bg-body) !important;
+    border-radius: 8px !important;
+    margin-right: 20px !important;
+    flex-shrink: 0 !important;
+    overflow: hidden !important;
+    border: none !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+.cart-item-image img {
+    max-width: 90% !important;
+    max-height: 90% !important;
+    object-fit: contain !important;
+}
+
+.cart-item-details {
+    flex: 1 !important;
+    min-width: 0 !important;
+}
+
+.cart-item-title {
+    font-weight: 700 !important;
+    margin-bottom: 5px !important;
+    font-size: 1rem !important;
+    word-wrap: break-word !important;
+}
+
+.cart-item-category {
+    color: var(--accent-primary) !important;
+    font-size: 0.8rem !important;
+    text-transform: uppercase !important;
+    margin-bottom: 10px !important;
+}
+
+.cart-item-controls {
+    display: flex !important;
+    align-items: center !important;
+    gap: 15px !important;
+    margin-top: 10px !important;
+    flex-wrap: wrap !important;
+}
+
+.quantity-control {
+    display: flex !important;
+    align-items: center !important;
+    gap: 10px !important;
+}
+
+.quantity-btn {
+    width: 30px !important;
+    height: 30px !important;
+    background: var(--bg-body) !important;
+    border: 1px solid var(--accent-primary) !important;
+    color: var(--text-main) !important;
+    font-weight: 700 !important;
+    cursor: pointer !important;
+    border-radius: 4px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+.quantity-btn:hover {
+    background: rgba(118, 255, 3, 0.1) !important;
+}
+
+.quantity-value {
+    min-width: 30px !important;
+    text-align: center !important;
+}
+
+.remove-item {
+    background: transparent !important;
+    border: none !important;
+    color: #ff4757 !important;
+    cursor: pointer !important;
+    padding: 5px !important;
+    margin-left: 10px !important;
+    font-size: 0.9rem !important;
+    transition: color 0.3s ease !important;
+    white-space: nowrap !important;
+}
+
+.remove-item:hover {
+    color: #ff6b81 !important;
+}
+
+.remove-item i {
+    margin-right: 5px !important;
+}
+
+.cart-item-price {
+    font-weight: 700 !important;
+    color: var(--accent-primary) !important;
+    font-size: 1.2rem !important;
+    min-width: 100px !important;
+    text-align: right !important;
+}
+
+.cart-summary {
+    background: var(--bg-surface) !important;
+    padding: 25px !important;
+    border-radius: 12px !important;
+    height: fit-content !important;
+    border: 1px solid rgba(118, 255, 3, 0.1) !important;
+    position: sticky !important;
+    top: 20px !important;
+}
+
+.cart-summary h3 {
+    font-size: 1.5rem !important;
+    margin-bottom: 20px !important;
+    text-transform: uppercase !important;
+    color: var(--accent-primary) !important;
+}
+
+.summary-row {
+    display: flex !important;
+    justify-content: space-between !important;
+    margin-bottom: 15px !important;
+    padding-bottom: 15px !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
+}
+
+.summary-row.total {
+    border-bottom: none !important;
+    font-size: 1.3rem !important;
+    font-weight: 700 !important;
+    color: var(--accent-primary) !important;
+    margin-top: 20px !important;
+    padding-top: 20px !important;
+    border-top: 2px solid var(--accent-primary) !important;
+}
+
+.checkout-btn {
+    width: 100% !important;
+    padding: 15px !important;
+    background: var(--accent-primary) !important;
+    color: #000 !important;
+    border: none !important;
+    font-weight: 800 !important;
+    text-transform: uppercase !important;
+    font-size: 1rem !important;
+    cursor: pointer !important;
+    border-radius: 4px !important;
+    transition: all 0.3s ease !important;
+    margin-top: 20px !important;
+}
+
+.checkout-btn:hover:not(:disabled) {
+    background: var(--accent-secondary) !important;
+    box-shadow: 0 0 20px var(--accent-glow) !important;
+    transform: translateY(-2px) !important;
+}
+
+.checkout-btn:disabled {
+    opacity: 0.5 !important;
+    cursor: not-allowed !important;
+}
+
+.cart-note {
+    font-size: 0.8rem !important;
+    color: var(--text-muted) !important;
+    text-align: center !important;
+    margin-top: 15px !important;
+}
+
+/* 6. ИНФО КАРТОЧКИ */
+.merch-info {
+    padding: 80px 0 !important;
+    background: transparent !important;
+    width: 100% !important;
+}
+
+.info-grid {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)) !important;
+    gap: 30px !important;
+    margin-top: 50px !important;
+    width: 100% !important;
+}
+
+.info-card {
+    text-align: center !important;
+    padding: 30px 20px !important;
+    background: var(--bg-surface) !important;
+    border-radius: 12px !important;
+    transition: all 0.3s ease !important;
+    border: 1px solid rgba(118, 255, 3, 0.1) !important;
+}
+
+.info-card:hover {
+    transform: translateY(-5px) !important;
+    box-shadow: 0 10px 20px rgba(118, 255, 3, 0.1) !important;
+    border-color: rgba(118, 255, 3, 0.2) !important;
+}
+
+.info-card i {
+    font-size: 2.5rem !important;
+    color: var(--accent-primary) !important;
+    margin-bottom: 20px !important;
+}
+
+.info-card h3 {
+    font-size: 1.2rem !important;
+    margin-bottom: 10px !important;
+    text-transform: uppercase !important;
+}
+
+.info-card p {
+    color: var(--text-muted) !important;
+    font-size: 0.9rem !important;
+    line-height: 1.5 !important;
+}
+
+/* 7. МОДАЛЬНОЕ ОКНО */
+.modal {
+    display: none !important;
+    position: fixed !important;
+    z-index: 1001 !important;
+    left: 0 !important;
+    top: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    background-color: rgba(0, 0, 0, 0.9) !important;
+    opacity: 0 !important;
+    transition: opacity 0.3s ease !important;
+    overflow-y: auto !important;
+}
+
+.modal.show {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    opacity: 1 !important;
+}
+
+.modal-content {
+    background: var(--bg-body) !important;
+    width: 90% !important;
+    max-width: 900px !important;
+    max-height: 90vh !important;
+    overflow-y: auto !important;
+    border-radius: 12px !important;
+    position: relative !important;
+    animation: modalFadeIn 0.3s ease !important;
+    border: 1px solid rgba(118, 255, 3, 0.2) !important;
+    margin: 20px !important;
+}
+
+@keyframes modalFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.close-modal {
+    position: absolute !important;
+    top: 15px !important;
+    right: 15px !important;
+    font-size: 1.8rem !important;
+    color: var(--text-main) !important;
+    cursor: pointer !important;
+    z-index: 10 !important;
+    transition: color 0.3s ease !important;
+    width: 40px !important;
+    height: 40px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    border-radius: 50% !important;
+    background: rgba(0, 0, 0, 0.5) !important;
+    border: none !important;
+}
+
+.close-modal:hover {
+    color: var(--accent-primary) !important;
+    background: rgba(118, 255, 3, 0.1) !important;
+}
+
+.modal-product-details {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 30px !important;
+    padding: 30px !important;
+}
+
+.modal-product-image {
+    background: var(--bg-surface) !important;
+    border-radius: 8px !important;
+    padding: 30px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    min-height: 400px !important;
+    border: 1px solid rgba(118, 255, 3, 0.1) !important;
+}
+
+.modal-product-image img {
+    max-width: 100% !important;
+    max-height: 100% !important;
+    object-fit: contain !important;
+}
+
+.modal-product-info h2 {
+    font-size: 2.2rem !important;
+    margin-bottom: 10px !important;
+    line-height: 1.2 !important;
+}
+
+.modal-product-category {
+    color: var(--accent-primary) !important;
+    font-weight: 700 !important;
+    text-transform: uppercase !important;
+    margin-bottom: 15px !important;
+    font-size: 0.9rem !important;
+    display: inline-block !important;
+    padding: 5px 12px !important;
+    background: rgba(118, 255, 3, 0.1) !important;
+    border-radius: 4px !important;
+}
+
+.modal-product-price {
+    font-size: 2rem !important;
+    font-weight: 900 !important;
+    color: var(--accent-primary) !important;
+    margin: 20px 0 !important;
+}
+
+.modal-product-description {
+    color: var(--text-muted) !important;
+    line-height: 1.6 !important;
+    margin-bottom: 25px !important;
+    font-size: 1rem !important;
+}
+
+/* 8. АДАПТИВ ДЛЯ МОБИЛЬНЫХ */
+
+/* Планшеты (768px - 1000px) */
+@media (max-width: 1000px) {
+    .merch-hero {
+        padding: 60px 0 40px !important;
+    }
+    
+    .merch-hero h1 {
+        font-size: 2.8rem !important;
+    }
+    
+    .filter-buttons {
+        justify-content: flex-start !important;
+        overflow-x: auto !important;
+        padding-bottom: 10px !important;
+    }
+    
+    .filter-btn {
+        padding: 10px 20px !important;
+        font-size: 0.85rem !important;
+        flex-shrink: 0 !important;
+    }
+    
+    .products-grid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)) !important;
+        gap: 20px !important;
+    }
+    
+    .cart-wrapper {
+        grid-template-columns: 1fr !important;
+        gap: 30px !important;
+    }
+    
+    .cart-summary {
+        position: static !important;
+    }
+    
+    .modal-product-details {
+        grid-template-columns: 1fr !important;
+    }
+    
+    .info-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 20px !important;
+    }
+}
+
+/* Телефоны (480px - 768px) */
+@media (max-width: 768px) {
+    .merch-hero h1 {
+        font-size: 2.2rem !important;
+    }
+    
+    .merch-hero p {
+        font-size: 1rem !important;
+    }
+    
+    .products-grid {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)) !important;
+    }
+    
+    .product-card {
+        min-height: 400px !important;
+    }
+    
+    .product-image {
+        height: 180px !important;
+    }
+    
+    .product-info {
+        padding: 15px !important;
+    }
+    
+    .product-title {
+        font-size: 1.1rem !important;
+    }
+    
+    .cart-item {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+    }
+    
+    .cart-item-image {
+        width: 100% !important;
+        height: 150px !important;
+        margin-right: 0 !important;
+        margin-bottom: 15px !important;
+    }
+    
+    .cart-item-details {
+        width: 100% !important;
+    }
+    
+    .cart-item-price {
+        text-align: left !important;
+        margin-top: 10px !important;
+        min-width: auto !important;
+    }
+    
+    .modal-content {
+        margin: 10px !important;
+        width: 95% !important;
+    }
+    
+    .info-grid {
+        grid-template-columns: 1fr !important;
+    }
+}
+
+/* Маленькие телефоны (< 480px) */
+@media (max-width: 480px) {
+    .merch-hero h1 {
+        font-size: 1.8rem !important;
+    }
+    
+    .products-grid {
+        grid-template-columns: 1fr !important;
+    }
+    
+    .product-actions {
+        flex-direction: column !important;
+    }
+    
+    .btn-view,
+    .btn-add-to-cart {
+        width: 100% !important;
+    }
+    
+    .modal-content {
+        margin: 5px !important;
+    }
+    
+    .modal-product-details {
+        padding: 15px !important;
+    }
+    
+    .cart-item-controls {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 10px !important;
+    }
+}
+
+/* Футер магазина */
+footer {
+    padding: 50px 0 !important;
+    text-align: center !important;
+    color: var(--text-muted) !important;
+    background: #030403 !important;
+    border-top: 1px solid rgba(118, 255, 3, 0.05) !important;
+    margin-top: 60px !important;
+    width: 100% !important;
+}
+
+.footer-note {
+    font-size: 0.8rem !important;
+    color: var(--text-muted) !important;
+    margin-top: 10px !important;
+}
+
+/* Скелетон загрузки */
+.product-card.skeleton {
+    background: linear-gradient(90deg, 
+        var(--bg-surface) 0%, 
+        var(--bg-surface-hover) 50%, 
+        var(--bg-surface) 100%) !important;
+    background-size: 200% 100% !important;
+    animation: loading 1.5s infinite !important;
+}
+
+@keyframes loading {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+}
+
+/* Уведомления */
+.notification {
+    position: fixed !important;
+    top: 20px !important;
+    right: 20px !important;
+    background: var(--accent-primary) !important;
+    color: #000 !important;
+    padding: 15px 25px !important;
+    border-radius: 8px !important;
+    font-weight: 700 !important;
+    z-index: 10000 !important;
+    animation: slideIn 0.3s ease !important;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5) !important;
+    max-width: 300px !important;
+    border: 1px solid rgba(118, 255, 3, 0.5) !important;
+}
+
+@media (max-width: 768px) {
+    .notification {
+        top: 10px !important;
+        right: 10px !important;
+        left: 10px !important;
+        max-width: none !important;
+        text-align: center !important;
+    }
+}
+/* ФИКС ДЛЯ ТЕЛЕФОНА - ТЕКСТ ВЛЕЗАЕТ В ЭКРАН */
+@media (max-width: 768px) {
+    .merch-hero h1 {
+        font-size: 1.8rem !important;
+        line-height: 1.2 !important;
+        padding: 0 15px !important;
+        word-wrap: break-word !important;
+        overflow-wrap: break-word !important;
+        hyphens: auto !important;
+        max-width: 100% !important;
+        margin: 20px auto !important;
+        text-align: center !important;
+        display: block !important;
+    }
+    
+    .merch-hero p {
+        font-size: 0.95rem !important;
+        padding: 0 20px !important;
+        line-height: 1.5 !important;
+        max-width: 100% !important;
+        margin: 0 auto 30px !important;
+    }
+    
+    .merch-hero .merch-container {
+        padding: 30px 15px !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+        overflow: hidden !important;
+    }
+}
+
+/* МАЛЕНЬКИЕ ТЕЛЕФОНЫ */
+@media (max-width: 480px) {
+    .merch-hero h1 {
+        font-size: 1.5rem !important;
+        padding: 0 10px !important;
+        margin: 15px auto !important;
+        letter-spacing: -0.5px !important;
+    }
+    
+    .merch-hero p {
+        font-size: 0.9rem !important;
+        padding: 0 15px !important;
+    }
+    
+    .merch-hero {
+        padding: 80px 0 40px !important;
+    }
+}
+
+/* ОЧЕНЬ МАЛЕНЬКИЕ ТЕЛЕФОНЫ */
+@media (max-width: 360px) {
+    .merch-hero h1 {
+        font-size: 1.3rem !important;
+        line-height: 1.1 !important;
+    }
+    
+    .merch-hero p {
+        font-size: 0.85rem !important;
+    }
+}

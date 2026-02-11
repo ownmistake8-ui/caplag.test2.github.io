@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caplag | Официальный магазин мерча</title>
+    <meta name="description" content="Официальный магазин мерча команды CapLag. Футболки, худи, форма и аксессуары с символикой команды.">
+    <meta name="keywords" content="Caplag, мерч, магазин, футболки, худи, форма, аксессуары, CS2, киберспорт">
+    
+    <!-- Основные стили -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="merch-style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        /* Дополнительные инлайн стили для гарантии */
+        body {
+            overflow-x: hidden !important;
+        }
+        
+        main {
+            overflow-x: hidden !important;
+        }
+        
+        .merch-container {
+            width: 100% !important;
+            max-width: 1400px !important;
+            margin: 0 auto !important;
+            padding: 0 20px !important;
+        }
+    </style>
+</head>
+<body>
+    <div id="particles-js" aria-hidden="true"></div>
+    
+    <aside class="sidebar">
+        <div>
+            <div class="logo-area" onclick="window.location.href='index.html'">
+                <img src="CapLag_logo.webp" alt="Logo" class="logo-img">
+                <span>CAPLAG</span>
+            </div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li><a href="index.html">Главная</a></li>
+                    <li><a href="team-select.html">Команды</a></li>
+                    <li><a href="merch.html" class="active">Магазин</a></li>
+                </ul>
+            </nav>
+        </div>
+        
+        <div class="sidebar-socials">
+            <p class="socials-title">Мы в сети:</p>
+            <div class="socials-grid">
+                <a href="https://vk.com/cyberkomi" class="social-link vk" target="_blank">
+                    <i class="fab fa-vk"></i>
+                </a>
+                <a href="https://t.me/твой_тг" class="social-link tg" target="_blank">
+                    <i class="fab fa-telegram-plane"></i>
+                </a>
+                <a href="https://discord.com/invite/aExJtDUdz5" class="social-link ds" target="_blank">
+                    <i class="fab fa-discord"></i>
+                </a>
+            </div>
+            <div class="sidebar-footer">
+                &copy; 2026 Caplag.gg<br>
+                Designed for Victory.
+            </div>
+        </div>
+    </aside>
+
+    <main>
+        <!-- Герой секция магазина -->
+        <section class="merch-hero reveal">
+            <div class="merch-container">
+                <h1>ОФИЦИАЛЬНЫЙ МЕРЧ CAPLAG</h1>
+                <p>Носи цвета команды! Эксклюзивная коллекция одежды и аксессуаров</p>
+            </div>
+        </section>
+        
+        <!-- Фильтры товаров -->
+        <section class="merch-filters reveal">
+            <div class="merch-container">
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-filter="all">ВСЕ ТОВАРЫ</button>
+                    <button class="filter-btn" data-filter="jersey">ФОРМА</button>
+                    <button class="filter-btn" data-filter="hoodie">ХУДИ</button>
+                    <button class="filter-btn" data-filter="t-shirt">ФУТБОЛКИ</button>
+                    <button class="filter-btn" data-filter="accessory">АКСЕССУАРЫ</button>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Сетка товаров -->
+        <section class="merch-products reveal">
+            <div class="merch-container">
+                <div class="products-grid" id="products-container">
+                    <!-- Товары будут загружены через JavaScript -->
+                    <div class="product-card skeleton" style="height: 400px;"></div>
+                    <div class="product-card skeleton" style="height: 400px;"></div>
+                    <div class="product-card skeleton" style="height: 400px;"></div>
+                    <div class="product-card skeleton" style="height: 400px;"></div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Корзина -->
+        <section class="cart-section reveal" id="cart-section">
+            <div class="merch-container">
+                <h2 class="section-title">КОРЗИНА <span id="cart-count">(0)</span></h2>
+                <div class="cart-wrapper">
+                    <div class="cart-items" id="cart-items">
+                        <!-- Товары в корзине будут здесь -->
+                        <div class="cart-empty" id="cart-empty">
+                            <i class="fas fa-shopping-cart"></i>
+                            <p>Корзина пуста</p>
+                        </div>
+                    </div>
+                    
+                    <div class="cart-summary">
+                        <h3>ИТОГО</h3>
+                        <div class="summary-row">
+                            <span>Товары:</span>
+                            <span id="subtotal">0 ₽</span>
+                        </div>
+                        <div class="summary-row">
+                            <span>Доставка:</span>
+                            <span id="shipping">500 ₽</span>
+                        </div>
+                        <div class="summary-row total">
+                            <span>К оплате:</span>
+                            <span id="total">500 ₽</span>
+                        </div>
+                        <button class="checkout-btn" disabled id="checkout-btn">ОФОРМИТЬ ЗАКАЗ</button>
+                        <p class="cart-note">Бесплатная доставка при заказе от 5000 ₽</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Информационные карточки -->
+        <section class="merch-info reveal">
+            <div class="merch-container">
+                <div class="info-grid">
+                    <div class="info-card">
+                        <i class="fas fa-shipping-fast"></i>
+                        <h3>БЫСТРАЯ ДОСТАВКА</h3>
+                        <p>Доставка по всей России 3-7 дней</p>
+                    </div>
+                    <div class="info-card">
+                        <i class="fas fa-tshirt"></i>
+                        <h3>КАЧЕСТВЕННЫЙ МАТЕРИАЛ</h3>
+                        <p>Премиум хлопок и современные ткани</p>
+                    </div>
+                    <div class="info-card">
+                        <i class="fas fa-undo-alt"></i>
+                        <h3>ВОЗВРАТ 14 ДНЕЙ</h3>
+                        <p>Легкий возврат и обмен товара</p>
+                    </div>
+                    <div class="info-card">
+                        <i class="fas fa-headset"></i>
+                        <h3>ПОДДЕРЖКА 24/7</h3>
+                        <p>Помощь с заказом в любое время</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Футер -->
+        <footer>
+            <div class="merch-container">
+                <p>&copy; 2026 Caplag. Все права защищены.</p>
+                <p class="footer-note">Магазин мерча CapLag является официальным</p>
+            </div>
+        </footer>
+    </main>
+    
+    <!-- Модальное окно товара -->
+    <div class="modal" id="product-modal" role="dialog">
+        <div class="modal-content">
+            <button class="close-modal">&times;</button>
+            <div class="modal-product-details" id="modal-product-details">
+                <!-- Контент будет загружен через JavaScript -->
+            </div>
+        </div>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="script.js"></script>
+    <script src="merch-script.js"></script>
+</body>
+</html>

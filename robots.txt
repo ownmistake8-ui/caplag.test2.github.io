@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+Sitemap: (ссылка на сайт)/sitemap.xml
+
+# Запретить скачивание конфигов (если будут)
+User-agent: *
+Disallow: /configs/

@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+
+<html lang="ru">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Caplag | Ведущая киберспортивная организация по CS2</title>
+<meta content="CapLag — первая в Республике Коми киберспортивная организация, выступающая на высшем уровне в Counter-Strike 2. Новости, состав, мерч." name="description"/>
+<meta content="CapLag, CS2, киберспорт, Counter-Strike, команда, состав, мерч, магазин" name="keywords"/>
+<meta content="CapLag" name="author"/>
+<!-- Open Graph мета-теги -->
+<meta content="CapLag | Ведущая киберспортивная организация" property="og:title"/>
+<meta content="Первая в Республике Коми киберспортивная организация по CS2" property="og:description"/>
+<meta content="website" property="og:type"/>
+<meta content="https://caplag.gg" property="og:url"/>
+<meta content="https://caplag.gg/CapLag_logo.webp" property="og:image"/>
+<!-- Preload критических ресурсов -->
+
+
+<!-- Иконки -->
+<link href="caplag_icon.webp" rel="icon" type="image/webp"/>
+<!-- Основные стили -->
+<link href="style.css" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet"/>
+<style>
+        /* Инлайн-стили для критического CSS */
+        .hero {
+            opacity: 0;
+            animation: fadeIn 0.8s ease-out forwards;
+        }
+        
+        @keyframes fadeIn {
+            to { opacity: 1; }
+        }
+        
+        /* Скелетон для загрузки */
+        .skeleton {
+            background: linear-gradient(90deg, #0d110d 25%, #141a14 50%, #0d110d 75%);
+            background-size: 200% 100%;
+            animation: loading 1.5s infinite;
+        }
+        
+        @keyframes loading {
+            0% { background-position: 200% 0; }
+            100% { background-position: -200% 0; }
+        }
+        
+        /* Предзагрузка изображений */
+        .link-preload {
+            position: absolute;
+            width: 0;
+            height: 0;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+<!-- Скрытая предзагрузка изображений -->
+<div aria-hidden="true" class="link-preload">
+<img alt="" src="CapLag_logo.webp"/>
+<img alt="" src="caplag_icon.webp"/>
+</div>
+<div aria-hidden="true" id="particles-js"></div>
+<!-- Боковая панель навигации -->
+<aside aria-label="Основная навигация" class="sidebar" role="navigation">
+<div>
+<div class="logo-area" onclick="window.location.href='index.html'">
+<img alt="Логотип CapLag" class="logo-img" height="45" loading="eager" src="CapLag_logo.webp" width="45"/>
+<span>CAPLAG</span>
+</div>
+<nav aria-label="Основные разделы" class="sidebar-nav">
+<ul>
+<li><a aria-current="page" class="active" href="index.html">Главная</a></li>
+<li><a href="team-select.html">Команды</a></li>
+<li><a href="merch.html">Магазин</a></li>
+</ul>
+</nav>
+</div>
+<div class="sidebar-socials">
+<p class="socials-title">Мы в сети:</p>
+<div class="socials-grid">
+<a aria-label="CapLag ВКонтакте" class="social-link vk" href="https://vk.com/cyberkomi" rel="noopener noreferrer" target="_blank">
+<i aria-hidden="true" class="fab fa-vk"></i>
+</a>
+<a aria-label="CapLag Telegram" class="social-link tg" href="https://t.me/твой_тг" rel="noopener noreferrer" target="_blank">
+<i aria-hidden="true" class="fab fa-telegram-plane"></i>
+</a>
+<a aria-label="CapLag Discord" class="social-link ds" href="https://discord.com/invite/aExJtDUdz5" rel="noopener noreferrer" target="_blank">
+<i aria-hidden="true" class="fab fa-discord"></i>
+</a>
+</div>
+<div class="sidebar-footer">
+                © 2026 Caplag.gg<br/>
+                Designed for Victory.
+            </div>
+</div>
+</aside>
+<!-- Основной контент -->
+<main id="main-content" role="main">
+<!-- Герой секция -->
+<section aria-label="Приветствие" class="hero reveal">
+<div class="container">
+<div class="hero-content">
+<h1>CAPLAG</h1>
+<p>Caplag — первая в Республике Коми киберспортивная организация, выступающая на высшем уровне в Counter-Strike 2.</p>
+<a aria-label="Перейти к составу команды" class="btn-primary" href="team-select.html">
+                        Наш Состав →
+                    </a>
+</div>
+</div>
+</section>
+<!-- Результаты матчей -->
+<section aria-label="Результаты матчей" class="matches-section reveal" id="matches">
+<div class="container">
+<div class="section-header">
+<h2 class="section-title">Результаты Faceit</h2>
+<span class="section-subtitle">LIVE &amp; RECENT</span>
+</div>
+<div class="matches-grid" id="faceit-matches">
+<div class="match-card skeleton" style="height: 150px;"></div>
+<div class="match-card skeleton" style="height: 150px;"></div>
+<div class="match-card skeleton" style="height: 150px;"></div>
+</div>
+</div>
+</section>
+<!-- ============================== -->
+<!-- TWITCH КАНАЛ (ПРОЗРАЧНЫЙ) -->
+<!-- ============================== -->
+<section class="twitch-transparent reveal">
+    <div class="container">
+        <div class="twitch-minimal">
+            <a href="https://www.twitch.tv/fcs_rk" 
+               class="twitch-link" 
+               target="_blank" 
+               rel="noopener noreferrer">
+                
+                <div class="twitch-icon-wrapper">
+                    <i class="fab fa-twitch"></i>
+                </div>
+                
+                <div class="twitch-content">
+                    <div class="twitch-header">
+                        <span class="twitch-badge">LIVE</span>
+                        <h3 class="twitch-title">FCS RK на Twitch</h3>
+                    </div>
+                    
+                    <p class="twitch-description">
+                        Официальные трансляции турниров с участием команды CapLag.
+                        Смотри наши матчи в прямом эфире!
+                    </p>
+                    
+                    <div class="twitch-meta">
+                        <span class="meta-item">
+                            <i class="fas fa-gamepad"></i> CS2
+                        </span>
+                        <span class="meta-item">
+                            <i class="fas fa-calendar"></i> Турниры
+                        </span>
+                        <span class="meta-item">
+                            <i class="fas fa-microphone"></i> RU
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="twitch-arrow">
+                    <i class="fas fa-external-link-alt"></i>
+                </div>
+            </a>
+        </div>
+    </div>
+</section>
+<!-- Анонс состава -->
+<!-- Новости -->
+<section aria-label="Последние новости" class="news-section reveal" id="news">
+<div class="container">
+<div class="section-header">
+<h2 class="section-title">Новости</h2>
+<span class="section-subtitle">События</span>
+</div>
+<div class="news-grid">
+<article class="news-item news-main">
+<div aria-label="Победа в чемпионате Республики Коми по компьютерному спорту" class="news-img-placeholder" role="img" style="background: url('Compet_win.webp') center/cover;">
+</div>
+<div class="news-content">
+<time class="news-date" datetime="2026-02-07">9 Февраля, 2026</time>
+<h3 class="news-title">Победа в чемпионате Республики Коми по компьютерному спорту</h3>
+</div>
+</article>
+<article class="news-item">
+<div aria-label="Матч против Vaseline Worms" class="news-img-placeholder" role="img" style="background: url('https://distribution.faceit-cdn.net/images/fbeea5c7-578c-45ac-b610-f56a1b0ad6e7.jpg') center/cover;">
+</div>
+<div class="news-content">
+<time class="news-date" datetime="2026-01-30">7 Февраля, 2026</time>
+<h3 class="news-title">Матч против Vaseline Worms</h3>
+</div>
+</article>
+<article class="news-item">
+<div aria-label="Хайлайты матча" class="news-img-placeholder" role="img" style="background: url('Hoodie\ 2.webp') center/cover;">>
+</div>
+<div class="news-content">
+<time class="news-date" datetime="2026-01-21">21 Января, 2026</time>
+<h3 class="news-title">Новый мерч Caplag</h3>
+</div>
+</article>
+</div>
+</div>
+</section>
+<!-- Контакты -->
+<section aria-label="Контактная информация" class="contact-section reveal">
+<div class="container">
+<div class="contact-wrapper">
+<div class="contact-info">
+<h2 class="section-title">Стань частью <br/><span style="color: var(--accent-primary);">CapLag.</span></h2>
+<p>
+                            Свяжитесь с нами по вопросам партнерства или вступления в академию.
+                        </p>
+<address>
+<p style="font-size: 0.9rem; color: var(--accent-primary);">EMAIL:</p>
+<p style="font-size: 1.4rem; font-weight: 600;">business@caplag.gg</p>
+</address>
+</div>
+<div class="contact-form">
+  <form aria-label="Форма обратной связи" id="contact-form">
+    <!-- Honeypot (антиспам, скрытое поле) -->
+    <div style="position:absolute; left:-9999px; width:1px; height:1px; overflow:hidden;">
+      <label for="contact-website">Website</label>
+      <input id="contact-website" name="website" type="text" tabindex="-1" autocomplete="off">
+    </div>
+
+    <div class="form-group">
+      <label for="contact-name">Ваше Имя</label>
+      <input id="contact-name" name="name" placeholder="Имя" required type="text">
+    </div>
+
+    <div class="form-group">
+      <label for="contact-email">Email</label>
+      <input id="contact-email" name="email" placeholder="example@mail.ru" required type="email">
+    </div>
+
+    <div class="form-group">
+      <label for="contact-message">Сообщение</label>
+      <textarea id="contact-message" name="message" placeholder="Текст..." rows="3"></textarea>
+    </div>
+
+    <button class="submit-btn" type="submit">Отправить</button>
+  </form>
+</div>
+
+</section>
+<!-- Партнеры -->
+<section aria-label="Наши партнеры" class="partners-section reveal">
+<div class="container">
+<p style="color: var(--text-muted); font-size: 0.75rem; text-transform: uppercase;">Официальные партнеры</p>
+<div class="partners-grid">
+<div aria-label="Партнер 1" class="partner-logo">ФКС РК</div>
+<!--<div aria-label="Партнер 2" class="partner-logo">LOGO</div>
+<div aria-label="Партнер 3" class="partner-logo">LOGO</div>
+<div aria-label="Партнер 4" class="partner-logo">LOGO</div>-->
+</div>
+</div>
+</section>
+<!-- Футер -->
+<footer role="contentinfo">
+<div class="container">
+<p>© 2026 Caplag. Все права защищены.</p>
+</div>
+</footer>
+</main>
+<!-- Скрипты (отложенная загрузка) -->
+<script defer="" src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+<script defer="" src="script.js"></script>
+<script defer="" src="index-script.js"></script>
+<!-- Noscript для пользователей без JavaScript -->
+<noscript>
+<style>
+            .sidebar { display: none; }
+            main { margin-left: 0; width: 100%; }
+            .hero { opacity: 1; }
+            .reveal { opacity: 1; transform: none; }
+        </style>
+<div style="position: fixed; top: 0; left: 0; right: 0; background: #ff4757; color: white; padding: 10px; text-align: center; z-index: 9999;">
+            ⚠️ Для полноценной работы сайта требуется JavaScript. Пожалуйста, включите его в настройках браузера.
+        </div>
+</noscript>
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CapLag | Состав команды CS2</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="roster-style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div id="particles-js" aria-hidden="true"></div>
+    
+    <aside class="sidebar">
+        <div>
+            <div class="logo-area" onclick="window.location.href='index.html'">
+                <img src="CapLag_logo.webp" alt="Logo" class="logo-img">
+                <span>CAPLAG</span>
+            </div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li><a href="index.html">Главная</a></li>
+                    <li><a href="team-select.html" class="active">Состав</a></li>
+                    <li><a href="merch.html">Магазин</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="sidebar-socials">
+            <p class="socials-title">Мы в сети:</p>
+            <div class="socials-grid">
+                <a href="https://vk.com/cyberkomi" class="social-link vk" target="_blank"><i class="fab fa-vk"></i></a>
+                <a href="https://t.me/твой_тг" class="social-link tg" target="_blank"><i class="fab fa-telegram-plane"></i></a>
+                <a href="https://discord.com/invite/aExJtDUdz5" class="social-link ds" target="_blank"><i class="fab fa-discord"></i></a>
+            </div>
+            <div class="sidebar-footer">
+                &copy; 2026 CapLag.gg<br>
+                Designed for Victory.
+            </div>
+        </div>
+    </aside>
+
+    <main>
+        <div class="roster-page-wrapper">
+            <!-- Левая колонка -->
+            <div class="players-list-column">
+                <a href="index.html" class="back-link">&larr; Назад на главную</a>
+                <div class="player-nav-item active"><div class="p-nav-nick">wh1testxr</div><div class="p-nav-name">Виталий Столяров</div></div>
+                <div class="player-nav-item"><div class="p-nav-nick">malce-</div><div class="p-nav-name">Илья Мальцев</div></div>
+                <div class="player-nav-item"><div class="p-nav-nick">oston</div><div class="p-nav-name">Владислав Мезин</div></div>
+                <div class="player-nav-item"><div class="p-nav-nick">setqa</div><div class="p-nav-name">Виктор Королев</div></div>
+                <div class="player-nav-item"><div class="p-nav-nick">Sip1z</div><div class="p-nav-name">Теодор Карманов</div></div>
+            </div>
+
+            <!-- Правая колонка -->
+            <div class="player-details-column">
+                <!-- Одна фотка для всех устройств -->
+                <img src="images/Whitestar.webp" 
+                     class="player-photo-bg" 
+                     id="p-img" 
+                     alt="Фото игрока"
+                     loading="lazy">
+                
+                <!-- Информация -->
+                <div class="player-info-content">
+                    <div class="p-detail-role" id="p-role">КАПИТАН</div>
+                    <h1 class="p-detail-nick" id="p-nick">wh1testxr
+                        <a href="configs/wh1testxr_config.cfg" class="config-download" download="wh1testxr_config.cfg">
+                            <i class="fas fa-cog config-icon"></i>
+                            <span class="config-tooltip">Скачать конфиг</span>
+                        </a>
+                        <a href="https://www.faceit.com/ru/players/wh1testxr" class="faceit-link" target="_blank">
+                            <span class="faceit-text-icon">F</span>
+                            <span class="faceit-tooltip">Faceit профиль</span>
+                        </a>
+                    </h1>
+                    <p class="p-detail-bio" id="p-bio">
+                        Ведущий рифлер команды. Известен своей агрессивной игрой на входах и стабильно высоким уроном.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="script.js"></script>
+    <script src="roster-script.js"></script>
+</body>
+</html>

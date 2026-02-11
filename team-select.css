@@ -1,0 +1,488 @@
+/* ==============================
+   TEAM-SELECT.CSS - Страница выбора команды
+   ============================== */
+
+.team-select-page {
+    min-height: 100vh;
+    background: radial-gradient(circle at 50% 30%, rgba(15, 43, 15, 0.3) 0%, #050705 100%);
+    padding: 40px 40px 80px;
+}
+
+/* Hero секция */
+.team-hero {
+    text-align: center;
+    padding: 60px 20px 80px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.team-subtitle {
+    color: #76ff03;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+    display: block;
+    text-shadow: 0 0 20px rgba(118, 255, 3, 0.3);
+    animation: fadeInUp 0.8s ease-out;
+}
+
+.team-title {
+    font-size: 5rem;
+    font-weight: 900;
+    line-height: 1;
+    margin-bottom: 30px;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: -2px;
+    animation: fadeInUp 0.8s ease-out 0.1s both;
+    text-shadow: 0 5px 30px rgba(0, 0, 0, 0.5);
+}
+
+.team-description {
+    color: #b0b8b0;
+    font-size: 1.2rem;
+    line-height: 1.8;
+    max-width: 700px;
+    margin: 0 auto;
+    animation: fadeInUp 0.8s ease-out 0.2s both;
+}
+
+/* Контейнер карточек */
+.team-cards-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto 100px;
+    padding: 20px;
+}
+
+/* Карточка команды */
+.team-card {
+    position: relative;
+    background: rgba(13, 17, 13, 0.6);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(118, 255, 3, 0.1);
+    border-radius: 24px;
+    padding: 40px 30px;
+    cursor: pointer;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    overflow: hidden;
+    z-index: 1;
+    min-height: 550px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.team-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(118, 255, 3, 0.05) 0%, transparent 100%);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.team-card:hover {
+    transform: translateY(-15px);
+    border-color: #76ff03;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(118, 255, 3, 0.2);
+}
+
+.team-card:hover::before {
+    opacity: 1;
+}
+
+/* Специфичные стили для CS2 карточки */
+.cs2-card {
+    background: radial-gradient(circle at 100% 0%, rgba(15, 43, 15, 0.8), rgba(5, 7, 5, 0.95));
+}
+
+.cs2-card .team-card-glow {
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(118, 255, 3, 0.1) 0%, transparent 70%);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    pointer-events: none;
+}
+
+.cs2-card:hover .team-card-glow {
+    opacity: 1;
+}
+
+/* Специфичные стили для Фиджитал карточки */
+.phygital-card {
+    background: radial-gradient(circle at 0% 100%, rgba(145, 70, 255, 0.1), rgba(5, 7, 5, 0.95));
+    border-color: rgba(145, 70, 255, 0.2);
+}
+
+.phygital-card .team-card-glow {
+    position: absolute;
+    top: -50%;
+    right: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(145, 70, 255, 0.1) 0%, transparent 70%);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    pointer-events: none;
+}
+
+.phygital-card:hover {
+    border-color: #9146FF;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(145, 70, 255, 0.3);
+}
+
+.phygital-card:hover .team-card-glow {
+    opacity: 1;
+}
+
+/* Контент карточки */
+.team-card-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    width: 100%;
+}
+
+.team-icon-wrapper {
+    width: 100px;
+    height: 100px;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 30px;
+    font-size: 3rem;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: all 0.3s ease;
+}
+
+.cs2-card .team-icon-wrapper i {
+    color: #76ff03;
+    text-shadow: 0 0 30px rgba(118, 255, 3, 0.5);
+}
+
+.phygital-card .team-icon-wrapper i {
+    color: #9146FF;
+    text-shadow: 0 0 30px rgba(145, 70, 255, 0.5);
+}
+
+.team-card:hover .team-icon-wrapper {
+    transform: scale(1.1) rotate(5deg);
+    border-color: currentColor;
+}
+
+.team-card-title {
+    font-size: 2.8rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.team-card-divider {
+    width: 80px;
+    height: 3px;
+    margin: 0 auto 25px;
+    background: currentColor;
+    transition: width 0.3s ease;
+}
+
+.cs2-card .team-card-divider {
+    background: #76ff03;
+    box-shadow: 0 0 20px #76ff03;
+}
+
+.phygital-card .team-card-divider {
+    background: #9146FF;
+    box-shadow: 0 0 20px rgba(145, 70, 255, 0.5);
+}
+
+.team-card:hover .team-card-divider {
+    width: 120px;
+}
+
+.team-card-desc {
+    color: #b0b8b0;
+    font-size: 1.1rem;
+    line-height: 1.7;
+    margin-bottom: 30px;
+    padding: 0 10px;
+}
+
+/* Статистика */
+.team-stats {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 35px;
+    padding: 20px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.stat-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.stat-value {
+    font-size: 1.8rem;
+    font-weight: 900;
+    color: #fff;
+    margin-bottom: 5px;
+}
+
+.cs2-card .stat-value {
+    text-shadow: 0 0 15px rgba(118, 255, 3, 0.3);
+}
+
+.phygital-card .stat-value {
+    text-shadow: 0 0 15px rgba(145, 70, 255, 0.3);
+}
+
+.stat-label {
+    font-size: 0.7rem;
+    color: #808a80;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Кнопка */
+.team-card-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 15px 30px;
+    border-radius: 40px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+}
+
+.cs2-card .team-card-btn {
+    background: rgba(118, 255, 3, 0.1);
+    color: #76ff03;
+}
+
+.cs2-card:hover .team-card-btn {
+    background: #76ff03;
+    color: #000;
+    box-shadow: 0 0 30px rgba(118, 255, 3, 0.5);
+}
+
+.phygital-card .team-card-btn {
+    background: rgba(145, 70, 255, 0.1);
+    color: #9146FF;
+}
+
+.phygital-card:hover .team-card-btn {
+    background: #9146FF;
+    color: #fff;
+    box-shadow: 0 0 30px rgba(145, 70, 255, 0.5);
+}
+
+.team-card-btn i {
+    transition: transform 0.3s ease;
+}
+
+.team-card:hover .team-card-btn i {
+    transform: translateX(5px);
+}
+
+/* Секция достижений */
+.achievements-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 20px;
+}
+
+.achievements-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.achievements-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+}
+
+.achievement-card {
+    background: rgba(13, 17, 13, 0.4);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(118, 255, 3, 0.1);
+    border-radius: 16px;
+    padding: 30px 20px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    transition: all 0.3s ease;
+}
+
+.achievement-card:hover {
+    transform: translateY(-5px);
+    border-color: #76ff03;
+    background: rgba(13, 17, 13, 0.8);
+}
+
+.achievement-icon {
+    width: 60px;
+    height: 60px;
+    background: rgba(118, 255, 3, 0.1);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    color: #76ff03;
+    transition: all 0.3s ease;
+}
+
+.achievement-card:hover .achievement-icon {
+    background: #76ff03;
+    color: #000;
+    transform: rotate(5deg) scale(1.1);
+}
+
+.achievement-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.achievement-value {
+    font-size: 2rem;
+    font-weight: 900;
+    color: #fff;
+    line-height: 1;
+    margin-bottom: 5px;
+}
+
+.achievement-label {
+    font-size: 0.8rem;
+    color: #808a80;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Анимации */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Адаптивность */
+@media (max-width: 1000px) {
+    .team-select-page {
+        padding: 20px 20px 60px;
+    }
+
+    .team-title {
+        font-size: 3.5rem;
+    }
+
+    .team-cards-container {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        max-width: 600px;
+    }
+
+    .team-card {
+        min-height: 500px;
+        padding: 30px 20px;
+    }
+
+    .team-card-title {
+        font-size: 2.2rem;
+    }
+
+    .achievements-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .team-hero {
+        padding: 40px 20px 60px;
+    }
+
+    .team-title {
+        font-size: 2.8rem;
+    }
+
+    .team-description {
+        font-size: 1rem;
+    }
+
+    .team-card {
+        min-height: 450px;
+    }
+
+    .team-icon-wrapper {
+        width: 80px;
+        height: 80px;
+        font-size: 2.2rem;
+    }
+
+    .team-card-title {
+        font-size: 2rem;
+    }
+
+    .stat-value {
+        font-size: 1.5rem;
+    }
+
+    .achievements-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .achievement-card {
+        padding: 25px;
+    }
+}
+
+@media (max-width: 480px) {
+    .team-title {
+        font-size: 2.2rem;
+    }
+
+    .team-card {
+        padding: 25px 15px;
+    }
+
+    .team-card-title {
+        font-size: 1.8rem;
+    }
+
+    .team-stats {
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .team-card-btn {
+        padding: 12px 25px;
+        font-size: 0.8rem;
+    }
+}

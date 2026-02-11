@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caplag | Команды</title>
+    <meta name="description" content="Caplag — составы по CS2 и фиджитал-спорту. Познакомься с игроками команды.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="team-select.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Иконки -->
+    <link href="caplag_icon.webp" rel="icon" type="image/webp">
+    
+    <style>
+        /* Критические стили для страницы выбора */
+        body {
+            background-color: #050705 !important;
+            position: relative;
+            overflow-x: hidden;
+        }
+        
+        #particles-js {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            background-color: #050705;
+            pointer-events: none;
+        }
+        
+        .team-select-page {
+            min-height: 100vh;
+            padding: 40px 40px 0;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            z-index: 1;
+            background: transparent !important;
+        }
+        
+        main {
+            display: flex;
+            flex-direction: column;
+            background: transparent !important;
+        }
+        
+        /* АНИМАЦИИ ПОЯВЛЕНИЯ КАК НА ГЛАВНОЙ */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Задержки для каскадной анимации */
+        .team-hero.reveal {
+            transition-delay: 0.1s;
+        }
+        
+        .team-cards-container .team-card.reveal:nth-child(1) {
+            transition-delay: 0.2s;
+        }
+        
+        .team-cards-container .team-card.reveal:nth-child(2) {
+            transition-delay: 0.3s;
+        }
+        
+        .achievements-section.reveal {
+            transition-delay: 0.4s;
+        }
+        
+        .achievements-grid .achievement-card.reveal:nth-child(1) {
+            transition-delay: 0.5s;
+        }
+        
+        .achievements-grid .achievement-card.reveal:nth-child(2) {
+            transition-delay: 0.6s;
+        }
+        
+        .achievements-grid .achievement-card.reveal:nth-child(3) {
+            transition-delay: 0.7s;
+        }
+        
+        .achievements-grid .achievement-card.reveal:nth-child(4) {
+            transition-delay: 0.8s;
+        }
+        
+        .partners-section.reveal {
+            transition-delay: 0.9s;
+        }
+        
+        footer.reveal {
+            transition-delay: 1s;
+        }
+        
+        /* Белый цвет для заголовков вместо градиента */
+        .team-title {
+            color: #ffffff !important;
+            text-shadow: 0 5px 30px rgba(0, 0, 0, 0.5);
+        }
+        
+        .section-title {
+            color: #ffffff !important;
+        }
+        
+        /* Правильные цвета текста как на главной */
+        .team-description,
+        .team-card-desc,
+        .stat-label,
+        .achievement-label,
+        .section-subtitle,
+        .partner-logo,
+        footer p {
+            color: #b0b8b0 !important;
+        }
+        
+        .team-card-title,
+        .stat-value,
+        .achievement-value,
+        footer {
+            color: #ffffff !important;
+        }
+        
+        .team-subtitle,
+        .section-subtitle {
+            color: #76ff03 !important;
+        }
+        
+        /* Убираем лишние фоны */
+        .team-card {
+            background: rgba(13, 17, 13, 0.6) !important;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+        
+        .achievement-card {
+            background: rgba(13, 17, 13, 0.4) !important;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+        
+        .partners-section {
+            background: transparent !important;
+        }
+        
+        footer {
+            background: #030403 !important;
+        }
+    </style>
+</head>
+<body>
+    <!-- Частицы как на главной странице -->
+    <div id="particles-js" aria-hidden="true"></div>
+    
+    <aside class="sidebar" aria-label="Основная навигация" role="navigation">
+        <div>
+            <div class="logo-area" onclick="window.location.href='index.html'">
+                <img src="CapLag_logo.webp" alt="Логотип CapLag" class="logo-img" width="45" height="45" loading="eager">
+                <span>CAPLAG</span>
+            </div>
+            <nav class="sidebar-nav" aria-label="Основные разделы">
+                <ul>
+                    <li><a href="index.html">Главная</a></li>
+                    <li><a href="team-select.html" class="active" aria-current="page">Команды</a></li>
+                    <li><a href="merch.html">Магазин</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="sidebar-socials">
+            <p class="socials-title">Мы в сети:</p>
+            <div class="socials-grid">
+                <a href="https://vk.com/cyberkomi" class="social-link vk" target="_blank" rel="noopener noreferrer" aria-label="CapLag ВКонтакте">
+                    <i class="fab fa-vk" aria-hidden="true"></i>
+                </a>
+                <a href="https://t.me/твой_тг" class="social-link tg" target="_blank" rel="noopener noreferrer" aria-label="CapLag Telegram">
+                    <i class="fab fa-telegram-plane" aria-hidden="true"></i>
+                </a>
+                <a href="https://discord.com/invite/aExJtDUdz5" class="social-link ds" target="_blank" rel="noopener noreferrer" aria-label="CapLag Discord">
+                    <i class="fab fa-discord" aria-hidden="true"></i>
+                </a>
+            </div>
+            <div class="sidebar-footer">
+                &copy; 2026 Caplag.gg<br>
+                Designed for Victory.
+            </div>
+        </div>
+    </aside>
+
+    <main id="main-content" role="main">
+        <div class="team-select-page">
+            <!-- Hero секция выбора с reveal анимацией -->
+            <section class="team-hero reveal" aria-label="Выбор команды">
+                <div class="team-hero-content">
+                    <span class="team-subtitle">CAPLAG ESPORTS</span>
+                    <h1 class="team-title">ВЫБЕРИ<br>СВОЮ КОМАНДУ</h1>
+                    <p class="team-description">
+                        Два состава. Одна цель — победа. Познакомься с игроками Caplag 
+                        в CS2 и фиджитал-дисциплинах.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Карточки выбора команд с reveal анимацией -->
+            <section class="team-cards-container" aria-label="Доступные команды">
+                <div class="team-card cs2-card reveal" onclick="window.location.href='roster-cs2.html'">
+                    <div class="team-card-glow"></div>
+                    <div class="team-card-content">
+                        <div class="team-icon-wrapper">
+                            <i class="fas fa-crosshairs"></i>
+                        </div>
+                        <h2 class="team-card-title">CS2</h2>
+                        <div class="team-card-divider"></div>
+                        <p class="team-card-desc">
+                            Основной состав по Counter-Strike 2. Участники закрытых квалификаций, 
+                            победители турниров.
+                        </p>
+                        <div class="team-card-btn">
+                            <span>Смотреть состав</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="team-card phygital-card reveal" onclick="window.location.href='roster-phygital.html'">
+                    <div class="team-card-glow"></div>
+                    <div class="team-card-content">
+                        <div class="team-icon-wrapper">
+                            <i class="fas fa-futbol"></i>
+                        </div>
+                        <h2 class="team-card-title">ФИДЖИТАЛ</h2>
+                        <div class="team-card-divider"></div>
+                        <p class="team-card-desc">
+                            Сборная по фиджитал-спорту. Совмещаем виртуальные и реальные 
+                            дисциплины на пути к победе.
+                        </p>
+                        <div class="team-card-btn">
+                            <span>Смотреть состав</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Секция достижений с reveal анимацией -->
+            <section class="achievements-section reveal" aria-label="Достижения организации">
+                <div class="achievements-header">
+                    <span class="section-subtitle">НАШИ ДОСТИЖЕНИЯ</span>
+                    <h2 class="section-title">ВМЕСТЕ МЫ СИЛА</h2>
+                </div>
+                <div class="achievements-grid">
+                    <div class="achievement-card reveal">
+                        <div class="achievement-icon">
+                            <i class="fas fa-trophy"></i>
+                        </div>
+                        <div class="achievement-content">
+                            <span class="achievement-value">12+</span>
+                            <span class="achievement-label">Турнирных побед</span>
+                        </div>
+                    </div>
+                    <div class="achievement-card reveal">
+                        <div class="achievement-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="achievement-content">
+                            <span class="achievement-value">11</span>
+                            <span class="achievement-label">Профессионалов</span>
+                        </div>
+                    </div>
+                    <div class="achievement-card reveal">
+                        <div class="achievement-icon">
+                            <i class="fas fa-calendar"></i>
+                        </div>
+                        <div class="achievement-content">
+                            <span class="achievement-value">3</span>
+                            <span class="achievement-label">Года в спорте</span>
+                        </div>
+                    </div>
+                    <div class="achievement-card reveal">
+                        <div class="achievement-icon">
+                            <i class="fas fa-gamepad"></i>
+                        </div>
+                        <div class="achievement-content">
+                            <span class="achievement-value">2</span>
+                            <span class="achievement-label">Дисциплины</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Партнеры с reveal анимацией -->
+            <section class="partners-section reveal" aria-label="Наши партнеры">
+                <div class="container">
+                    <p style="color: #808a80; font-size: 0.75rem; text-transform: uppercase;">Официальные партнеры</p>
+                    <div class="partners-grid">
+                        <div aria-label="Партнер 1" class="partner-logo">ФКС РК</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Футер с reveal анимацией -->
+            <footer role="contentinfo" class="reveal">
+                <div class="container">
+                    <p>© 2026 Caplag. Все права защищены.</p>
+                </div>
+            </footer>
+        </div>
+    </main>
+
+    <!-- Скрипты (отложенная загрузка) -->
+    <script defer src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script defer src="script.js"></script>
+    
+    <!-- Добавляем скрипт для reveal анимаций -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Функция для reveal анимаций
+            function initRevealAnimations() {
+                const revealElements = document.querySelectorAll('.reveal');
+                
+                if (!revealElements.length) return;
+                
+                if (!('IntersectionObserver' in window)) {
+                    revealElements.forEach((el) => el.classList.add('active'));
+                    return;
+                }
+                
+                const observer = new IntersectionObserver(
+                    (entries) => {
+                        entries.forEach((entry) => {
+                            if (entry.isIntersecting) {
+                                entry.target.classList.add('active');
+                                // Можно анобсервить после появления
+                                observer.unobserve(entry.target);
+                            }
+                        });
+                    },
+                    { 
+                        threshold: 0.1,
+                        rootMargin: '0px 0px -50px 0px'
+                    }
+                );
+                
+                revealElements.forEach((el) => observer.observe(el));
+            }
+            
+            // Запускаем анимации
+            initRevealAnimations();
+            
+            // Если есть particles.js, инициализируем
+            if (typeof particlesJS !== 'undefined' && document.getElementById('particles-js')) {
+                particlesJS('particles-js', {
+                    particles: {
+                        number: { value: 40, density: { enable: true, value_area: 1000 } },
+                        color: { value: "#76ff03" },
+                        shape: { type: "circle" },
+                        opacity: { value: 0.3 },
+                        size: { value: 1.5 },
+                        line_linked: {
+                            enable: true,
+                            distance: 150,
+                            color: "#76ff03",
+                            opacity: 0.1,
+                            width: 1,
+                        },
+                        move: { enable: true, speed: 1, out_mode: "out" },
+                    },
+                    interactivity: {
+                        detect_on: "canvas",
+                        events: { onhover: { enable: false }, onclick: { enable: false } },
+                    },
+                    retina_detect: false,
+                });
+            }
+        });
+    </script>
+    
+    <!-- Noscript для пользователей без JavaScript -->
+    <noscript>
+        <style>
+            .sidebar { display: none; }
+            main { margin-left: 0; width: 100%; }
+            .team-hero { opacity: 1; }
+            .reveal { opacity: 1; transform: none; }
+            #particles-js { display: none; }
+            body { background-color: #050705; }
+        </style>
+        <div style="position: fixed; top: 0; left: 0; right: 0; background: #ff4757; color: white; padding: 10px; text-align: center; z-index: 9999;">
+            ⚠️ Для полноценной работы сайта требуется JavaScript. Пожалуйста, включите его в настройках браузера.
+        </div>
+    </noscript>
+</body>
+</html>

@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CapLag | Страница не найдена</title>
+    <meta name="description" content="Страница не найдена. Вернитесь на главную сайта CapLag.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .error-page {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 40px 20px;
+            background: transparent;
+        }
+        
+        .error-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .error-code {
+            font-size: 120px;
+            font-weight: 900;
+            color: var(--accent-primary);
+            line-height: 1;
+            margin-bottom: 20px;
+            text-shadow: 0 0 30px rgba(118, 255, 3, 0.3);
+        }
+        
+        .error-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: var(--text-main);
+            text-transform: uppercase;
+        }
+        
+        .error-message {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            margin-bottom: 40px;
+            line-height: 1.6;
+        }
+        
+        .error-links {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .error-link {
+            padding: 15px 30px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 700;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .error-link-primary {
+            background: var(--accent-primary);
+            color: #000;
+        }
+        
+        .error-link-secondary {
+            background: transparent;
+            border: 2px solid var(--accent-primary);
+            color: var(--accent-primary);
+        }
+        
+        .error-link:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 0 20px var(--accent-glow);
+        }
+        
+        @media (max-width: 768px) {
+            .error-code {
+                font-size: 80px;
+            }
+            
+            .error-title {
+                font-size: 1.5rem;
+            }
+            
+            .error-links {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .error-link {
+                width: 100%;
+                max-width: 300px;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="particles-js"></div>
+    <aside class="sidebar">
+        <div>
+            <div class="logo-area">
+                <img src="CapLag_logo.wepb" alt="Логотип CapLag" class="logo-img">
+                <span>CAPLAG</span>
+            </div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li><a href="index.html">Главная</a></li>
+                    <li><a href="roster.html">Состав</a></li>
+                    <li><a href="merch.html">Магазин</a></li>
+                </ul>
+            </nav>
+        </div>
+        
+        <div class="sidebar-socials">
+            <p class="socials-title">Мы в сети:</p>
+            <div class="socials-grid">
+                <a href="https://vk.com/cyberkomi" class="social-link vk" target="_blank">
+                    <i class="fab fa-vk"></i>
+                </a>
+                <a href="https://t.me/твой_тг" class="social-link tg" target="_blank">
+                    <i class="fab fa-telegram-plane"></i>
+                </a>
+                <a href="https://discord.com/invite/aExJtDUdz5" class="social-link ds" target="_blank">
+                    <i class="fab fa-discord"></i>
+                </a>
+            </div>
+            <div class="sidebar-footer">
+                &copy; 2026 CapLag.gg<br>
+                Designed for Victory.
+            </div>
+        </div>
+    </aside>
+
+    <main>
+        <section class="error-page reveal">
+            <div class="container">
+                <div class="error-content">
+                    <div class="error-code">404</div>
+                    <h1 class="error-title">Страница не найдена</h1>
+                    <p class="error-message">
+                        Запрашиваемая вами страница не существует или была перемещена. 
+                        Возможно, вы ввели неправильный адрес или страница была удалена.
+                    </p>
+                    
+                    <div class="error-links">
+                        <a href="index.html" class="error-link error-link-primary">
+                            <i class="fas fa-home"></i>
+                            На главную
+                        </a>
+                        <a href="roster.html" class="error-link error-link-secondary">
+                            <i class="fas fa-users"></i>
+                            Наш состав
+                        </a>
+                        <a href="merch.html" class="error-link error-link-secondary">
+                            <i class="fas fa-shopping-cart"></i>
+                            Магазин
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <footer>
+            <div class="container">
+                <p>&copy; 2026 CapLag. Все права защищены.</p>
+            </div>
+        </footer>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
