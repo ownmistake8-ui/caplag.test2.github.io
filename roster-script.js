@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', function() {
             name: 'Илья Мальцев',
             role: 'СНАЙПЕР',
             bio: 'Основной AWP\'ер команды. Быстрая реакция и нестандартные позиции.',
-            photo: 'images/Malce.webp',
+            photo: 'images/malce.webp',
             config: 'configs/malce_config.cfg',
             faceit: 'https://www.faceit.com/ru/players/malce-'
         },
@@ -221,3 +221,4 @@ document.addEventListener('DOMContentLoaded', function() {
     // Начальное обновление контента
     updatePlayerContent(0);
 });
+
