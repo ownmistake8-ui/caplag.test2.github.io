@@ -7,6 +7,143 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="roster-style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* ========== СКРЫВАЕМ СПИСОК ИГРОКОВ ТОЛЬКО НА МОБИЛЬНЫХ ========== */
+        @media (max-width: 1000px) {
+            .players-list-column {
+                display: none !important;
+            }
+            
+            .roster-page-wrapper {
+                margin-left: 0 !important;
+            }
+            
+            .player-details-column {
+                width: 100% !important;
+                flex: 1 0 100% !important;
+                padding: 40px 20px !important;
+                justify-content: center !important;
+                text-align: center !important;
+                min-height: 100vh;
+                background: radial-gradient(circle at 50% 30%, rgba(15, 43, 15, 0.95) 0%, #050705 100%);
+            }
+            
+            .player-info-content {
+                max-width: 100% !important;
+                text-align: center !important;
+                margin-bottom: 30px;
+            }
+            
+            .p-detail-nick {
+                font-size: 3rem !important;
+                justify-content: center;
+            }
+            
+            .player-photo-bg {
+                position: relative !important;
+                width: 220px !important;
+                height: 220px !important;
+                border-radius: 20px;
+                border: 3px solid rgba(118, 255, 3, 0.5);
+                box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+                object-fit: cover;
+                margin: 0 auto 30px;
+                mask-image: none !important;
+                -webkit-mask-image: none !important;
+                opacity: 1;
+                display: block;
+            }
+            
+            .p-detail-bio {
+                font-size: 1.1rem !important;
+                padding: 0 15px;
+                max-width: 500px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            
+            .config-download,
+            .faceit-link {
+                position: relative !important;
+                top: 0 !important;
+                right: 0 !important;
+                display: inline-block !important;
+                margin: 10px 5px !important;
+            }
+            
+            .config-tooltip,
+            .faceit-tooltip {
+                display: none !important;
+            }
+            
+            /* Подсказка для свайпа */
+            .player-details-column::after {
+                content: '← → свайп';
+                position: absolute;
+                bottom: 25px;
+                left: 50%;
+                transform: translateX(-50%);
+                color: rgba(118, 255, 3, 0.8);
+                font-size: 0.85rem;
+                text-transform: uppercase;
+                letter-spacing: 3px;
+                background: rgba(0, 0, 0, 0.7);
+                padding: 10px 20px;
+                border-radius: 30px;
+                border: 1px solid rgba(118, 255, 3, 0.4);
+                backdrop-filter: blur(5px);
+                z-index: 20;
+                font-weight: 700;
+                animation: pulseSwipe 2s infinite;
+                white-space: nowrap;
+            }
+            
+            @keyframes pulseSwipe {
+                0%, 100% { opacity: 0.7; transform: translateX(-50%) scale(1); }
+                50% { opacity: 1; transform: translateX(-50%) scale(1.05); }
+            }
+        }
+        
+        /* Маленькие телефоны */
+        @media (max-width: 480px) {
+            .player-photo-bg {
+                width: 180px !important;
+                height: 180px !important;
+            }
+            
+            .p-detail-nick {
+                font-size: 2.2rem !important;
+            }
+            
+            .p-detail-bio {
+                font-size: 1rem !important;
+            }
+            
+            .player-details-column::after {
+                font-size: 0.75rem;
+                padding: 8px 16px;
+                bottom: 20px;
+            }
+        }
+        
+        /* Десктоп версия - оставляем список видимым */
+        @media (min-width: 1001px) {
+            .players-list-column {
+                display: flex !important;
+            }
+        }
+        
+        /* Убираем hover эффекты на мобильных */
+        @media (max-width: 1000px) {
+            .player-nav-item:hover {
+                background: transparent !important;
+            }
+            
+            .back-link {
+                display: none !important;
+            }
+        }
+    </style>
 </head>
 <body>
     <div id="particles-js" aria-hidden="true"></div>
@@ -41,29 +178,43 @@
 
     <main>
         <div class="roster-page-wrapper">
-            <!-- Левая колонка -->
+            <!-- Левая колонка - видна только на десктопе -->
             <div class="players-list-column">
                 <a href="index.html" class="back-link">&larr; Назад на главную</a>
-                <div class="player-nav-item active"><div class="p-nav-nick">wh1testxr</div><div class="p-nav-name">Виталий Столяров</div></div>
-                <div class="player-nav-item"><div class="p-nav-nick">malce-</div><div class="p-nav-name">Илья Мальцев</div></div>
-                <div class="player-nav-item"><div class="p-nav-nick">oston</div><div class="p-nav-name">Владислав Мезин</div></div>
-                <div class="player-nav-item"><div class="p-nav-nick">setqa</div><div class="p-nav-name">Виктор Королев</div></div>
-                <div class="player-nav-item"><div class="p-nav-nick">Sip1z</div><div class="p-nav-name">Теодор Карманов</div></div>
+                <div class="player-nav-item active">
+                    <div class="p-nav-nick">wh1testxr</div>
+                    <div class="p-nav-name">Виталий Столяров</div>
+                </div>
+                <div class="player-nav-item">
+                    <div class="p-nav-nick">malce-</div>
+                    <div class="p-nav-name">Илья Мальцев</div>
+                </div>
+                <div class="player-nav-item">
+                    <div class="p-nav-nick">oston</div>
+                    <div class="p-nav-name">Владислав Мезин</div>
+                </div>
+                <div class="player-nav-item">
+                    <div class="p-nav-nick">setqa</div>
+                    <div class="p-nav-name">Виктор Королев</div>
+                </div>
+                <div class="player-nav-item">
+                    <div class="p-nav-nick">Sip1z</div>
+                    <div class="p-nav-name">Теодор Карманов</div>
+                </div>
             </div>
 
-            <!-- Правая колонка -->
+            <!-- Правая колонка - фото и информация -->
             <div class="player-details-column">
-                <!-- Одна фотка для всех устройств -->
                 <img src="images/Whitestar.webp" 
                      class="player-photo-bg" 
                      id="p-img" 
                      alt="Фото игрока"
                      loading="lazy">
                 
-                <!-- Информация -->
                 <div class="player-info-content">
                     <div class="p-detail-role" id="p-role">КАПИТАН</div>
-                    <h1 class="p-detail-nick" id="p-nick">wh1testxr
+                    <h1 class="p-detail-nick" id="p-nick">
+                        wh1testxr
                         <a href="configs/wh1testxr_config.cfg" class="config-download" download="wh1testxr_config.cfg">
                             <i class="fas fa-cog config-icon"></i>
                             <span class="config-tooltip">Скачать конфиг</span>
